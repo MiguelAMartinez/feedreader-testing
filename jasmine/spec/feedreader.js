@@ -1,5 +1,7 @@
 /* feedreader.js
  *
+ * Reference include: Udacity Forum, Stack Overflow, and Mozilla Developer Network
+ *
  * This is the spec file that Jasmine will read and contains
  * all of the tests that will be run against your application.
  */
@@ -8,7 +10,7 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
- 
+
 $(function() {
     describe('RSS Feeds', function() {
 
