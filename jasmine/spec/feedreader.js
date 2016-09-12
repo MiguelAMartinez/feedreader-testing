@@ -50,7 +50,7 @@ $(function() {
          * hidden by default. */
 
         it('is hidden by default', function() {
-            expect($('body').attr('class')).toBe('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
             expect($('.slide-menu').offset().left).toBe(-192);
         });
 
@@ -60,10 +60,10 @@ $(function() {
 
         it('changes visibility when the its icon is clicked', function() {
             $('.menu-icon-link').trigger('click');
-            expect($('body').attr('class')).not.toBe('menu-hidden');  
+            expect($('body').hasClass('menu-hidden')).toBe(false); 
       
             $('.menu-icon-link').trigger('click');
-            expect($('body').attr('class')).toBe('menu-hidden'); 
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
     });
 
@@ -79,9 +79,8 @@ $(function() {
             loadFeed(0, done);
         });
 
-        it('have at least one .entry element within the .feed container', function(done) {
-            expect($('.feed').find('.entry').length).toBeGreaterThan(0);
-            done();
+        it('have at least one .entry element within the .feed container', function() {
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
 
     });
@@ -95,19 +94,20 @@ $(function() {
             entriesAfter;
 
         beforeEach(function(done){
-            $('.feed').empty()
+            $('.feed').empty();
             loadFeed(0, function(){
                 entriesBefore = $('.feed').find("h2").text();
                 done();
             });
         });
 
-        it('has a new feed with changing content', function(done){
+        it('has a new feed with changing content', function(done) {
             loadFeed(1, function() {
                 entriesAfter = $('.feed').find("h2").text();
+                expect(entriesBefore).not.toEqual(entriesAfter);
+                done();
             });
-            expect(entriesBefore).not.toEqual(entriesAfter);
-            done();
+            
         });
     });
 }());
