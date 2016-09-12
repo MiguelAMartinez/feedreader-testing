@@ -1,4 +1,4 @@
-# Feedreader Jasmine testing
+# FeedReader Jasmine testing
 The goal of this project was to develop [Jasmine](http://jasmine.github.io) functionality tests for
 a given [Feedreader web application](https://github.com/udacity/frontend-nanodegree-feedreader). 
 
