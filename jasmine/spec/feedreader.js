@@ -8,6 +8,7 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
+ 
 $(function() {
     describe('RSS Feeds', function() {
 
@@ -88,24 +89,23 @@ $(function() {
         /*This test ensures when a new feed is loaded by the loadFeed function
         that the content actually changes. Remember, loadFeed() is asynchronous.*/
 
-        // beforeEach(function(done){
-        //     loadFeed(0, done);
-        // });
+        var entriesBefore, 
+            entriesAfter;
 
-        // it('has a new feed and changing content', function(done) {
-        //     expect($('.feed').find('.entry').length).toBeGreaterThan(0);
-        //     done();
-        // });
+        beforeEach(function(done){
+            $('.feed').empty()
+            loadFeed(0, function(){
+                entriesBefore = $('.feed').find("h2").text();
+                done();
+            });
+        });
 
+        it('has a new feed with changing content', function(done){
+            loadFeed(1, function() {
+                entriesAfter = $('.feed').find("h2").text();
+            });
+            expect(entriesBefore).not.toEqual(entriesAfter);
+            done();
+        });
     });
-
-
-
-
-    /* TODO: Write a new test suite named "New Feed Selection"
-
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
 }());
