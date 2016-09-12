@@ -1,6 +1,6 @@
 /* feedreader.js
  *
- * Reference include: Udacity Forum, Stack Overflow, and Mozilla Developer Network
+ * References include: Udacity Forum, Stack Overflow, and Mozilla Developer Network.
  *
  * This is the spec file that Jasmine will read and contains
  * all of the tests that will be run against your application.
