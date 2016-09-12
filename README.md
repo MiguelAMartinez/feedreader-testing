@@ -1,10 +1,10 @@
-# Project Overview
+# Feedreader Jasmine testing
 The goal of this project was to develop [Jasmine](http://jasmine.github.io) functionality tests for
 a given [Feedreader web application](https://github.com/udacity/frontend-nanodegree-mobile-portfolio). 
 
 
-## Jasmine testing 
-The 'feeedreader.js' file was modified in order to include the desired tests, which include: 
+## Functionality tests
+The `feeedreader.js` file was modified in order to include the following tests: 
 
 - RSS Feeds are defined, have URLs that are defined and not empty, and have names that are 
 defined and not empty.
@@ -22,7 +22,7 @@ A successful test will display:
 ## Run the application 
 You can access the application online [here](https://miguelamartinez.github.io/feedreader-testing/). 
 
-Additionally, you can download the repository and open the 'index.html' file.
+Additionally, you can download the repository and open the `index.html` file.
 
 
 
